@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,9 +7,9 @@
     <meta name="description" content="Praveen Poonia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../style/tachyons.min.css">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <title>Promise in Javascript</title>
 </head>
-
 <body class="w-100 sans-serif bg-white">
     
     <main class="mw8 center mv5">
@@ -82,157 +81,45 @@
 <p>Create → Use → Flow</p>
 <p>Creating Promises</p>
 <p><code>new Promise( )</code></p>
-<pre><code class="language-jsx">var promise = new Promise(function(resolve, reject) {
-  if( /*  some condition  */) {
-    resolve('success');
-  } else {
-    reject('reject');
-  }
-});
-
-promise.then(function(result) {
-  console.log(result); //success
-}, function(reason) {
-  console.log(reason); //reject
-});
-</code></pre>
-<pre><code class="language-jsx">function get_user(id){  
-	return new Promise((resolve, reject) =&gt; {
-    fetch(`https://somedomain.com/api/users/${id}`)
-        .then(response =&gt; response.json())
-        .then(user_data =&gt; {
-        	if(user_data.active) resolve(user_data);
-            else reject(new Error('This user is not active any longer'))
-            //reject due to an application logical error
-        })
-        .catch(err =&gt; reject(err)) //reject due to a communication error
-  })
-}
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">var</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token comment">/*  some condition  */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'reject'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//success</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">reason</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reason<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//reject</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">get_user</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <br>	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://somedomain.com/api/users/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">user_data</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        	<span class="token keyword">if</span><span class="token punctuation">(</span>user_data<span class="token punctuation">.</span>active<span class="token punctuation">)</span> <span class="token function">resolve</span><span class="token punctuation">(</span>user_data<span class="token punctuation">)</span><span class="token punctuation">;</span><br>            <span class="token keyword">else</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'This user is not active any longer'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>            <span class="token comment">//reject due to an application logical error</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//reject due to a communication error</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
 <p>Promisification</p>
-<pre><code class="language-jsx">const fs = require('fs');
-function readFile(filename, enc){  
-return new Promise((resolve, reject) =&gt; {
-
-     fs.readFile(filename, enc, (err, data) =&gt; {
-       if (err) reject(err);
-       else resolve(data);
-     })
-    
-  })
-}
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">function</span> <span class="token function">readFile</span><span class="token punctuation">(</span><span class="token parameter">filename<span class="token punctuation">,</span> enc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <br><span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br><br>     fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> enc<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>       <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>       <span class="token keyword">else</span> <span class="token function">resolve</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><br>     <span class="token punctuation">}</span><span class="token punctuation">)</span><br>    <br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
 <p>USE</p>
 <p><code>Promise.prototype.then( )</code></p>
-<pre><code class="language-jsx">get_user(id)
-.then(on_resolved, on_rejected)
-</code></pre>
-<pre><code class="language-jsx">get_user(862726)
-.then(user_data =&gt; console.log(user_data) //success...
-,err =&gt; console.error(err.message)) //failure...
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>on_resolved<span class="token punctuation">,</span> on_rejected<span class="token punctuation">)</span></code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span><span class="token number">862726</span><span class="token punctuation">)</span><br><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">user_data</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user_data<span class="token punctuation">)</span> <span class="token comment">//success...</span><br><span class="token punctuation">,</span><span class="token parameter">err</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//failure...</span></code></pre>
 <p>Chaining Promises</p>
 <p>&quot;<em>a Promise handler always return another Promise</em>&quot;<em>therefore it can be chained to other Promises</em></p>
-<pre><code class="language-jsx">get_user(id)
-	 .then(on_resolved_1, on_rejected_1)
-         .then(on_resolved_2)
-         .then(null, on_rejected_2)
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br>	 <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>on_resolved_1<span class="token punctuation">,</span> on_rejected_1<span class="token punctuation">)</span><br>         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>on_resolved_2<span class="token punctuation">)</span><br>         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> on_rejected_2<span class="token punctuation">)</span></code></pre>
 <p>Promise.prototype.catch( )</p>
-<pre><code class="language-jsx">get_user(id)
-	 .then(null, on_rejected)
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br>	 <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> on_rejected<span class="token punctuation">)</span></code></pre>
 <p>↓</p>
-<pre><code class="language-jsx">get_user(id)
-	 .catch(on_rejected)
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br>	 <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>on_rejected<span class="token punctuation">)</span></code></pre>
 <p>Chaining Promises( )</p>
-<pre><code class="language-jsx">get_user(id)
-        .then(step1)
-        .then(step2)
-        .then(step3)
-        .then(step4)
-        .catch( err =&gt; {
-            // The chain is broken and goes to the catch
-            // Handle any errors from all above steps
-        })
-</code></pre>
-<pre><code class="language-jsx">get_user(id)
-        .then(step1,on_get_user_reject)
-        .then(step2,on_step1_reject)
-        .then(step3,on_step2_reject)
-        .then(step4,on_step3_reject)
-        .catch( err =&gt; {
-            // The chain is NOT broken
-            // Handle any errors from step4
-        })
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step1<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step2<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step3<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step4<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            <span class="token comment">// The chain is broken and goes to the catch</span><br>            <span class="token comment">// Handle any errors from all above steps</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token function">get_user</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step1<span class="token punctuation">,</span>on_get_user_reject<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step2<span class="token punctuation">,</span>on_step1_reject<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step3<span class="token punctuation">,</span>on_step2_reject<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step4<span class="token punctuation">,</span>on_step3_reject<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            <span class="token comment">// The chain is NOT broken</span><br>            <span class="token comment">// Handle any errors from step4</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>FLOW</p>
 <p>Promise.each()</p>
 <p><em><strong>Serial</strong> iteration on a collection and then...</em></p>
-<pre><code class="language-jsx">var items = [0,1,2,3,4,5,6,7,8,9];
-
-    Promise.each(items, item =&gt; {
-    
-      return Promise.delay(Math.random() * 2000)
-                  .then(()=&gt;  console.log(`Finished item: ${item}`) );
-    
-    })
-    .then( origin_array =&gt; {
-        console.log(`All tasks are done now... ${origin_array}`);
-    })
-    .catch( err =&gt; 
-        console.error(err.message)
-    });
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br>    Promise<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span>items<span class="token punctuation">,</span> <span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <br>      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2000</span><span class="token punctuation">)</span><br>                  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Finished item: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br>    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token parameter">origin_array</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">All tasks are done now... </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>origin_array<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br>    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> <br>        console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>message<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Promise.map()</p>
 <p><em><strong>Parallel</strong> iteration on a collection and then...</em></p>
-<pre><code class="language-jsx">var items = [0,1,2,3,4,5,6,7,8,9];
-
-    Promise.map(items, item =&gt; {
-        
-        return Promise.delay(Math.random() * 2000)
-            .then(()=&gt; {
-              console.log(`Finished item: ${item}`);
-            });
-    
-    }, {concurrency: 3}) //adjust concurrency...
-    
-    .then(() =&gt; console.log('All tasks are done now...'))
-
-    .catch( err =&gt; console.error(err.message));
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br>    Promise<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>items<span class="token punctuation">,</span> <span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        <br>        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2000</span><span class="token punctuation">)</span><br>            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span><br>              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Finished item: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <br>    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">concurrency</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">//adjust concurrency...</span><br>    <br>    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'All tasks are done now...'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br><br>    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Promise.all()</p>
 <p><em><strong>Parallel</strong></em> <em>execution of different async operationsand then...</em></p>
-<pre><code class="language-jsx">Promise.all(pending_promises_Array)
-        .then( items =&gt; console.log('All operations are complete!', 'items: ',items))
-        .catch( err =&gt;  console.error( err.message ) );
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx">Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>pending_promises_Array<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token parameter">items</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'All operations are complete!'</span><span class="token punctuation">,</span> <span class="token string">'items: '</span><span class="token punctuation">,</span>items<span class="token punctuation">)</span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span>  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span> err<span class="token punctuation">.</span>message <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><em>input - an array of promises</em></li>
 <li><em>output an array of results values - (ordered respectively to the original array order!)</em></li>
 </ul>
 <p>Promise.race()</p>
 <p><em>The .then( )</em> handler runs after the first async operation is complete</p>
-<pre><code class="language-jsx">Promise.race(pending_promises_Array)
-        .then( item =&gt; {
-            console.log(`The first operation is complete!, first item: ${item}`);
-        })
-        .catch( err =&gt; {
-             console.log(`Error: ${err.message}`);
-        })
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx">Promise<span class="token punctuation">.</span><span class="token function">race</span><span class="token punctuation">(</span>pending_promises_Array<span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">The first operation is complete!, first item: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Error: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>err<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>Promise.some()</p>
 <p><em>Similar to race()</em></p>
 <p><em>The .then()</em> <em>handler runs after the (n)th async operation is complete</em></p>
-<pre><code class="language-jsx">Promise.some(pending_promises_Array, 2)
-        .spread( (first, second) =&gt; {
-            console.log(`first: ${first}, second: ${second}`) 
-        })      
-        .catch( err =&gt; {
-            console.log(`Error: ${err.message}`) 
-        })
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx">Promise<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>pending_promises_Array<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><br>        <span class="token punctuation">.</span><span class="token function">spread</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> second</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">first: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>first<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, second: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>second<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> <br>        <span class="token punctuation">}</span><span class="token punctuation">)</span>      <br>        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span> <span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Error: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>err<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> <br>        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
     </main>
     <footer class="bg-white black-70 ph3 ph5-ns pv5 pv6-ns bt b--black-10">
@@ -282,5 +169,4 @@ return new Promise((resolve, reject) =&gt; {
 </footer>
    
 </body>
-
 </html>

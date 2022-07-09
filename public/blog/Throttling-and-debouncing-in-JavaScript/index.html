@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,9 +7,9 @@
     <meta name="description" content="Praveen Poonia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../style/tachyons.min.css">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <title>Throttling and debouncing in JavaScript</title>
 </head>
-
 <body class="w-100 sans-serif bg-white">
     
     <main class="mw8 center mv5">
@@ -24,22 +23,7 @@
 <li>The stand-in function will record the time of each call to the original listener</li>
 <li>The stand-in will compare the time of the current event with the last time it invoked the original handler, and will neglect to invoke the handler if the time difference is less than the delay</li>
 </ol>
-<pre><code class="language-jsx">// ES6 code
-function throttled(delay, fn) {
-  let lastCall = 0;
-  return function (...args) {
-    const now = (new Date).getTime();
-    if (now - lastCall &lt; delay) {
-      return;
-    }
-    lastCall = now;
-    return fn(...args);
-  }
-}
-const myHandler = (event) =&gt; // do something with the event
-const tHandler = throttled(200, myHandler);
-domNode.addEventListener(&quot;mousemove&quot;, tHandler);
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token comment">// ES6 code</span><br><span class="token keyword">function</span> <span class="token function">throttled</span><span class="token punctuation">(</span><span class="token parameter">delay<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">let</span> lastCall <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> now <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> lastCall <span class="token operator">&lt;</span> delay<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">return</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    lastCall <span class="token operator">=</span> now<span class="token punctuation">;</span><br>    <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token keyword">const</span> <span class="token function-variable function">myHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token comment">// do something with the event</span><br><span class="token keyword">const</span> tHandler <span class="token operator">=</span> <span class="token function">throttled</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> myHandler<span class="token punctuation">)</span><span class="token punctuation">;</span><br>domNode<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mousemove"</span><span class="token punctuation">,</span> tHandler<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>debouncing is a technique of keeping the trigger rate at exactly 0 until a period of calm, and then triggering the listener exactly once.Debouncing is used when you don’t need to track every move user makes as long as you can make a timely response.</p>
 <p>Debouncing can be implemented using <code>setTimeout()</code> and <code>clearTimeout()</code>. It normally takes a value in milliseconds that represents the wait period before the listener is triggered.</p>
 <p>Here it is in plain English:</p>
@@ -50,24 +34,7 @@ domNode.addEventListener(&quot;mousemove&quot;, tHandler);
 <li>When the stand-in function is invoked again, cancel the previously scheduled call, and schedule a new one after the delay</li>
 <li>When calls to the stand-in function do not happen for a while, the scheduled call to the listener will finally go through</li>
 </ol>
-<pre><code class="language-jsx">// ES6
-function debounced(delay, fn) {
-  let timerId;
-  return function (...args) {
-    if (timerId) {
-      clearTimeout(timerId);
-    }
-    timerId = setTimeout(() =&gt; {
-      fn(...args);
-      timerId = null;
-    }, delay);
-  }
-}
-
-const myHandler = (event) =&gt; // do something with the event
-const dHandler = debounced(200, myHandler);
-domNode.addEventListener(&quot;input&quot;, dHandler);
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token comment">// ES6</span><br><span class="token keyword">function</span> <span class="token function">debounced</span><span class="token punctuation">(</span><span class="token parameter">delay<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">let</span> timerId<span class="token punctuation">;</span><br>  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>timerId<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timerId<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>      <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      timerId <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">const</span> <span class="token function-variable function">myHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token comment">// do something with the event</span><br><span class="token keyword">const</span> dHandler <span class="token operator">=</span> <span class="token function">debounced</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> myHandler<span class="token punctuation">)</span><span class="token punctuation">;</span><br>domNode<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> dHandler<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
     </main>
     <footer class="bg-white black-70 ph3 ph5-ns pv5 pv6-ns bt b--black-10">
@@ -117,5 +84,4 @@ domNode.addEventListener(&quot;input&quot;, dHandler);
 </footer>
    
 </body>
-
 </html>

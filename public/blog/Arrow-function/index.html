@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,9 +7,9 @@
     <meta name="description" content="Praveen Poonia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../style/tachyons.min.css">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <title>Arrow function in Javascript</title>
 </head>
-
 <body class="w-100 sans-serif bg-white">
     
     <main class="mw8 center mv5">
@@ -41,40 +40,7 @@ Arrow Functions lexically bind their context so this actually refers to the orig
 <p>Lexical Scoping just means that it uses thisfrom the code that contains the Arrow Function.</p>
 <p>An arrow function does not have its own this. The this value of the enclosing lexical context is used i.e. Arrow functions follow the normal variable lookup rules. So while searching for this which is not present in current scope they end up finding this from its enclosing scope. Thus, in the following code, the this within the function that is passed to setInterval has the same value as this in the lexically enclosing function:</p>
 <p>e.g. -</p>
-<pre><code class="language-jsx">function Person(){
-	this.age = 0;
-	setInterval(() =&gt; {
-		this.age++; // |this| properly refers to the Person object
-	}, 1000);
-}
-var p = new Person();
-
-/* ES5 function object context */
-// variant 1
-var self =this;
-this.nums.forEach(function(v) {
-	if(v % 5 === 0)
-		self.fives.push(v);
-});
-
-// variant 2
-this.nums.forEach(function(v) {
-	if(v % 5 === 0)
-		this.fives.push(v);
-}, this);
-
-//variant 3 (since ES5.1)
-this.nums.forEach(function(v) {
-	if(v % 5 === 0)
-		this.fives.push(v);
-}.bind(this));
-
-// ES6 Arrow function object context
-this.nums.forEach((v) =&gt; {
-	if(v % 5 === 0)
-		this.fives.push(v);
-});
-</code></pre>
+<pre class="language-jsx" tabindex="0" data-language="jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>	<span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>		<span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// |this| properly refers to the Person object</span><br>	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">/* ES5 function object context */</span><br><span class="token comment">// variant 1</span><br><span class="token keyword">var</span> self <span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">;</span><br><span class="token keyword">this</span><span class="token punctuation">.</span>nums<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>v <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><br>		self<span class="token punctuation">.</span>fives<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// variant 2</span><br><span class="token keyword">this</span><span class="token punctuation">.</span>nums<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>v <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><br>		<span class="token keyword">this</span><span class="token punctuation">.</span>fives<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">//variant 3 (since ES5.1)</span><br><span class="token keyword">this</span><span class="token punctuation">.</span>nums<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>v <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><br>		<span class="token keyword">this</span><span class="token punctuation">.</span>fives<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// ES6 Arrow function object context</span><br><span class="token keyword">this</span><span class="token punctuation">.</span>nums<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>v <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><br>		<span class="token keyword">this</span><span class="token punctuation">.</span>fives<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
     </main>
     <footer class="bg-white black-70 ph3 ph5-ns pv5 pv6-ns bt b--black-10">
@@ -124,5 +90,4 @@ this.nums.forEach((v) =&gt; {
 </footer>
    
 </body>
-
 </html>
