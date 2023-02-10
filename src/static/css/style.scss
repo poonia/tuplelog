@@ -1,0 +1,375 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/*Your Custom CSS Goes here*/
+
+/* h1 {
+  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+}
+
+h3 {
+  @apply text-2xl font-bold mb-3;
+}
+
+.font-Kaushan {
+  font-family: 'Kaushan Script', cursive;
+}
+body {
+  font-family: Segoe UI,system-ui,-apple-system,sans-serif;
+} */
+/* Syntax Highlighting*/
+
+/* body :not(pre) > code[class*="language-"],
+body pre[class*="language-"] {
+  @apply bg-gray-800;
+}
+ */
+
+ @font-face {
+  font-family: "Shippori Mincho";
+}
+
+@font-face {
+  font-family: "Figtree";
+}
+
+:root {
+  /* fonts */
+  --main-font: "Shippori Mincho", serif;
+  --sub-font: "Figtree", serif;
+  /* colors */
+  --primary: #000;
+  --secondary: #222;
+  --tertiary: #757575;
+  --inverted: #fff;
+
+  /* font size */
+  --font-size-default: 1.6rem;
+  --font-size-logo: 2.2rem;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2.6rem;
+  --font-size-desc-1: 1.6rem;
+  --font-size-header-text: 2rem;
+  --font-size-header-link: 2rem;
+  --font-size-btn-1: 2rem;
+  --font-size-btn-2: 2rem;
+  --font-size-footer-link: 22rem;
+  --padding-body: 1rem;
+
+  --line-height-h1: 2rem;
+  --line-height-desc-1: 2rem;
+  --line-height-header-text: 2rem;
+  --line-height-header-link: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+font-size: 80%;
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-size: var(--font-size-default);
+  font-family: var(--sub-font);
+  color: var(--secondary);
+  line-height: 2.4rem;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(360deg, #fff 0%, rgb(148 207 247 / 20%) 0, #fff 100%), url(../img/sky.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+ol,ul {
+  padding-left: 2.6rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+a:hover {
+  border-bottom: 1px solid var(--primary);
+  text-decoration: none;
+  text-underline-position: under;
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  height: 6rem;
+}
+
+.logo {
+  font-family: var(--main-font);
+  font-size: var(--font-size-logo);
+}
+.logo:hover {
+  text-decoration: none;
+  border-bottom:none;
+}
+.nav-link {
+  font-family: var(--main-font);
+  margin: 0 8px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.main {
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
+  text-align: center;
+}
+.intro {
+  font-family: var(--main-font);
+  font-size: 5rem;
+  font-weight: 500;
+  max-width: 80vw;
+  display: flex;
+  margin-bottom: 5rem;
+  line-height: 100%;
+}
+
+.hero .button {
+  margin-bottom: 5rem;
+}
+
+/* CSS */
+.button {
+background-color: #3DD1E7;
+border: 0 solid #E5E7EB;
+box-sizing: border-box;
+color: #000000;
+font-size: 1.5rem;
+font-weight: 700;
+justify-content: center;
+line-height: 1.75rem;
+padding: .75rem 1.65rem;
+position: relative;
+text-align: center;
+text-decoration: none #000000 solid;
+text-decoration-thickness: auto;
+cursor: pointer;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.button:focus {
+outline: 0;
+}
+
+.button:after {
+content: '';
+position: absolute;
+border: 1px solid #000000;
+bottom: 2px;
+left: 2px;
+width: calc(100% - 1px);
+height: calc(100% - 1px);
+}
+
+.button:hover:after {
+bottom: 0;
+left: 0;
+}
+
+/* blog listing */
+.main.listing {
+  justify-content: start;
+  padding: 2rem 2rem;
+}
+.blog-listing {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.gradient-text {
+  --tw-gradient-to: #0070f3;
+  --tw-gradient-from: #ec008c;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+}
+.gradient-text:hover {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right,var(--tw-gradient-stops));
+}
+
+a.gradient-text:hover {
+  border-bottom: 1px solid;
+  text-decoration: none;
+  text-underline-position: under;
+  border-image-slice: 1;
+  border-width: 0.15rem;
+  border-image-source: linear-gradient(to right,var(--tw-gradient-stops));
+}
+
+.heading {
+  font-family: var(--main-font);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 4.2rem;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+
+}
+
+.blog-item {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #a0a0a0;
+  position: relative;
+  padding-bottom: 2.8rem;
+}
+
+.blog-item::before {
+  content: '';
+  border-bottom: 1px solid #a0a0a0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -49.7%, 0) scale(1.003) rotate(-0.2deg);
+  z-index: -1;
+}
+
+.blog-item-title {
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 2.1rem;
+  padding-bottom: 1.8rem;
+  text-transform: capitalize;
+}
+
+.text-base {
+  font-size: 1.4rem;
+  color: var(--tertiary);
+  padding-bottom: 1rem;
+}
+.blog-item-desc {
+  color: var(--tertiary);
+  padding-bottom: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.1px;
+  font-size: 1.7rem; 
+}
+
+.blog-item-link {
+  font-size: 1.5rem;
+  color: var(--tertiary);
+  text-transform: capitalize;
+}
+
+
+/* detail */
+.main.detail {
+  justify-content: start;
+}
+
+.blog-content {
+  text-align: left;
+}
+
+footer {
+  padding: 2rem 4rem;
+  font-size: 1.4rem;
+}
+
+
+@media (min-width: 768px) {
+  .header-nav {
+      padding: 3rem 4rem;
+      height: 3.5rem;
+  }
+  .main.home {
+      height: calc(100% - 12rem);
+  }
+
+  .button {
+      padding: 1.4rem 4rem;;
+      font-size: 1.8rem;
+  }
+
+  .intro {
+      font-size: 10rem;
+      max-width: 60vw;
+  }
+  
+  /* listing */
+  .main.listing {
+      padding: 2rem 4rem;
+  }
+  .blog-listing {
+      width: 50vw;
+  }
+
+  /* detail */
+  .main.detail {
+      padding: 2rem 4rem;
+      text-align: left;
+  }
+  .blog {
+      width: 50vw;
+  }
+}

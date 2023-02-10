@@ -1,4 +1,5 @@
-<div class="{{ 'lg:fixed' if path == 'home' }} w-full bg-midnight">
+{# commenting old nav #}
+{# <div class="{{ 'lg:fixed' if path == 'home' }} w-full bg-midnight">
     <nav class="flex items-center justify-center lg:justify-between flex-wrap p-6" x-data="{ isOpen: false }" @keydown.escape="isOpen = false"  @click.away="isOpen = false">
         <!--Logo etc-->
         <div class="flex items-center">
@@ -38,4 +39,16 @@
             {% endif %}
         </div>
     </nav>
-</div>
+</div> #}
+
+<header class="header-nav">
+            <a href="/" class="logo">Tuple Log</div>
+            {% if navigation.items %}
+                 <nav>
+                    {% for item in navigation.items %}
+                        <a  @click="isOpen = false" class="nav-link" href="{{ item.url }}">{{ item.text }}</a>
+                     {% endfor %}
+                </nav>
+            {% endif %}
+           
+        </header>
