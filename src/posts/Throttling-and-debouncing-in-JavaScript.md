@@ -1,12 +1,17 @@
 ---
-"title": "Throttling and debouncing in JavaScript"
-"author": "Praveen Poonia"
-"created": 2021-06-11
-"description": Both technique reduce the trigger rate to optimize resource usage, so it’s a compromise between the resolution of tracking the user actions, and optimal resource usage.
+created: 2021-06-11
+title: Throttling and debouncing in JavaScript
+description: Both technique reduce the trigger rate to optimize resource usage,
+  so it’s a compromise between the resolution of tracking the user actions, and
+  optimal resource usage.
+author: Praveen Poonia
+date: 2023-04-05T22:38:31.033Z
+image: /static/img/icon.svg
+imageAlt: Throttling and debouncing
+tags:
+  - Tags
 ---
-
-
-Throttling and Debouncing, both technique reduce the trigger rate to optimize resource usage, so it’s a compromise between the resolution of tracking the user actions, and optimal resource usage. Good news is that both these techniques can be applied and unapplied with absolutely no change to the event listener code.
+Throttling and debouncing are two techniques that can be used to optimize resource usage by reducing the frequency of trigger events. While these techniques can help conserve resources, they also involve a trade-off between the resolution of tracking user actions and optimal resource usage. The good news is that these techniques can be applied and unapplied without requiring changes to the event listener code.
 
 **Throttling** is a straightforward reduction of the trigger rate. It will cause the event listener to ignore some portion of the events while still firing the listeners at a constant (but reduced) rate. *One very common example is scrolling where you want your interface to react in response to the scroll position (e.g., real and fake parallax effects, sticky menus, etc).* Throttling can be implemented several ways. You can throttle by the number of events triggered, or by the rate (number of events per unit time), or by the delay between two handled events.
 
