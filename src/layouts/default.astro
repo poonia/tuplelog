@@ -1,0 +1,48 @@
+---
+import { SITE } from '$/config'
+import BaseHead from '$/components/BaseHead.astro';
+import MainLayout from '$/components/MainLayout.astro';
+
+const { content, showPageHeader = true } = Astro.props
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={ content.title ? `${ SITE.title } | ${content.title}` : SITE.title } description={ content.description } image={SITE.image}/>
+    </head>
+    <MainLayout>
+        {showPageHeader &&
+            <div class="page__header">
+                <h1 class="page__title">{content.title}</h1>
+                <h5 class="page__desc">{content.description}</h5>
+            </div>
+        }
+        <slot />
+    </MainLayout>
+
+    <!-- Netlify Identity Widget -->
+    <!-- Needed only if you are using Netlify Identity feature -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script type="text/javascript">
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+  </script>
+</html>
+<style>
+    .page__header {
+        @apply py-4 mb-1
+    }
+    .page__title {
+        @apply text-5xl font-extrabold text-theme-primary dark:text-theme-dark-primary
+    }
+    .page__desc {
+        @apply text-gray-400
+    }
+</style>
