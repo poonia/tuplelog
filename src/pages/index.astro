@@ -1,28 +1,27 @@
 ---
-export const prerender = true
-
-import { getCollection, getEntryBySlug } from 'astro:content'
-import DefaultPageLayout from '$/layouts/default.astro'
-import PostPreviewList from '$/components/PostPreviewList.astro'
-
-
-const title = 'Home'
-const description = 'Astro-Ink is a crisp, minimal, personal blog theme for Astro'
-
-const posts = await getCollection('blog')
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-<DefaultPageLayout content={{ title, description }} showPageHeader={false}>
-    <PostPreviewList posts={posts} />
-    <div class="page__actions">
-        <a class="action__go-to-blog" href="/blog" title="All Posts">All Posts &rarr;</a>
-    </div>
-</DefaultPageLayout>
 
-<style>
-    .page__actions {
-        @apply flex justify-center md:justify-end py-6
-    }
-    .action__go-to-blog {
-        @apply text-base uppercase text-gray-500 dark:text-gray-400 hover:underline
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>🧑‍🚀 Hello!</h1>
+			<p>
+				In this blog I share my learning & experience related to frontend web development.
+			</p>
+			<p>
+				This blog features a diverse range of articles on front-end development, including project case studies, best practices, thought processes, and front-end strategies.
+				It covers a broad spectrum of topics, from HTML, CSS, and SVG to accessibility and other related areas.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
