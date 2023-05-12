@@ -28,7 +28,8 @@ function throttled(delay, fn) {
 }
 const myHandler = (event) => // do something with the event
 const tHandler = throttled(200, myHandler);
-  domNode.addEventListener("mousemove", tHandler);
+
+domNode.addEventListener("mousemove", tHandler);
 ```
 
 Debouncing is a technique of keeping the trigger rate at exactly 0 until a period of calm, and then triggering the listener exactly once. Debouncing is used when you don’t need to track every move user makes as long as you can make a timely response.
@@ -60,5 +61,6 @@ function debounced(delay, fn) {
 
 const myHandler = (event) => // do something with the event
 const dHandler = debounced(200, myHandler);
-  domNode.addEventListener("input", dHandler);
+
+domNode.addEventListener("input", dHandler);
 ```
