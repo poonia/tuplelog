@@ -4,10 +4,13 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BlogListItem from '../../components/BlogListItem.astro';
+import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => {
+		return a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	}
 );
 ---
 
@@ -36,19 +39,45 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
+			<div class="top-banner grad-bg">
+				<div class="mx-auto w-full container-w text-left">
+					<h1 class="banner-title grad-heading">Blogs</h1>
+				</div>
+			</div>
+			<section class="listing w-full container-w mx-auto">
 					{
 						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
+							<BlogListItem post={post} />
 						))
 					}
-				</ul>
 			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+
+	.top-banner {
+		padding: 6rem 2rem 4rem;
+		width: 100%;
+		color: #001F3F;
+		margin-bottom: 2rem;
+
+		.banner-title {
+			font-size: 3.7rem;
+			font-weight: 800;
+			line-height: 5rem;
+			padding-bottom: 1rem;
+			color: transparent;
+			-webkit-background-clip: text;
+
+			@media screen(md) {
+			}
+		}
+
+
+	}
+	/*.listing {*/
+	/*	padding: 2rem;*/
+	/*}*/
+</style>

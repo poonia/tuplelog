@@ -16,6 +16,8 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
-	<Content />
+	<!--  <h1>{post.data.title}</h1> -->
+	<div class="container-post-w">
+		<Content />
+	</div>
 </BlogPost>
