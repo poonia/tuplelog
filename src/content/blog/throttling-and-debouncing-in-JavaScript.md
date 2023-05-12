@@ -1,6 +1,6 @@
 ---
 title: Throttling and debouncing in javaScript
-description: Understanding throttling and debouncing techniques in JavaScripts
+description: Understanding throttling and debouncing techniques in JavaScript
 pubDate: 2021-03-04T05:00:00.000Z
 ---
 
