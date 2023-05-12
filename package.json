@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "npx tinacms dev -c 'astro dev'",
     "start": "astro dev",
-    "build": "npm run build-tina && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "build-tina": "npm run tinacms build",
-    "postbuild": "node ./scripts/search/prepare-index.js"
+    "postbuild": "node ./scripts/search/prepare-index.js",
+    "build-netlify" : "npx tinacms build && npm run build"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.0",
