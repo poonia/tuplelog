@@ -2,12 +2,12 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
-import { remarkReadingTime } from "./src/utils/readingTime";
 import oneDarkPro from './src/utils/shiki-theme/one-dark-pro.json';
 
-
-// const t = shiki.loadTheme('./one-dark-pro')
-
+import remarkToc from 'remark-toc';
+import { remarkReadingTime } from "./src/utils/readingTime";
+import a11yEmoji from '@fec/remark-a11y-emoji';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 
 
 // https://astro.build/config
@@ -28,6 +28,9 @@ export default defineConfig({
           wrap: true,
       },
       extendDefaultPlugins: true,
-      remarkPlugins: [remarkReadingTime],
+      remarkPlugins: [remarkReadingTime,remarkToc,a11yEmoji],
+      rehypePlugins: [
+        rehypeHeadingIds
+      ],
   }
 });

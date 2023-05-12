@@ -1,0 +1,49 @@
+---
+import FormattedDate from '../FormattedDate.astro';
+
+const { title, description, pubDate,remarkPluginFrontmatter } = Astro.props;
+
+---
+<div class="post-head grad-bg">
+    <div class="mx-auto w-full container-w text-left">
+        <h1 class="title grad-heading">{title}</h1>
+        <h2 class="desc">{description}</h2>
+        <div class="date-n-read">
+            <FormattedDate date={pubDate} /> <span class="delimtr">  ◆ </span>  <span>☕️ {Math.round(remarkPluginFrontmatter?.estReadingTime) || "5"} min read</span>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+	.title {
+		font-size: 4rem;
+		font-weight: 900;
+		letter-spacing: 1px;
+		line-height: 1.7;
+		padding-bottom: 1rem;
+	}
+	.desc {
+		font-size: 2.4rem;
+		font-weight: 300;
+		padding-bottom: 1.5rem;
+	}
+
+	.last-updated-on {
+		font-style: italic;
+	}
+
+	.post-head {
+		color: #151931;
+		padding: 8rem 4rem 5rem;
+	}
+    .date-n-read {
+        font-size: 90%;
+    }
+    .delimtr {
+        font-size: smaller;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        color: #a7aece;
+    }
+</style>
