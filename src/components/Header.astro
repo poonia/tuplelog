@@ -1,24 +1,81 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE } from '../consts';
+import SvgIcon from './SvgIcon.astro'
 ---
 
-<header>
-	<h1>
-		{SITE_TITLE}
-	</h1>
-	<h3>{SITE_DESCRIPTION}</h3>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-	</nav>
+<header class="header max-w-full ">
+	 <!-- 🫧🕸️ 🏔️ ⛩️ 🧿 🌀 ⌘ 🀤 -->
+	<div class="container-w mx-auto w-full flex justify-between">
+		<a href="/" class="header__logo">
+			🌀 { SITE.nameToken.initial }<span class="highlight">{ SITE.nameToken.last }</span>
+		</a>
+		<nav>
+			<ul class="list-none flex">
+				<li>
+					<a href="/blog" title="blog"> Blogs </a>
+				</li>
+				<li>
+					<a href="/about" title="about"> About </a>
+				</li>
+				<li class="highlight">
+					<a href="/rss.xml" title="RSS">
+						<SvgIcon>
+							<path d="M4 11a9 9 0 0 1 9 9"></path>
+							<path d="M4 4a16 16 0 0 1 16 16"></path>
+							<circle cx="5" cy="19" r="1"></circle>
+						</SvgIcon>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>
+
 <style>
-	header {
-		margin: 0em 0 2em;
+	.header {
+		@apply flex;
+		height: 40px;
+		background: transparent;
+		-webkit-backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(20px);
+		/*position: fixed;*/
+		/*top: 0;*/
+		/*left: 0;*/
+		width: 100%;
+		transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+		/*box-shadow: 0px 0px 6px #00000021;*/
+		padding: 0 2rem;
+		align-content: center;
+		flex-wrap: wrap;
+		color: #001F3F;
 	}
-	h2 {
-		margin: 0.5em 0;
+
+	.header__logo {
+		font-size: 1.8rem;
+		font-weight: 800;
+		line-height: 2.2rem;
+		letter-spacing: 0.2px;
+		-webkit-font-smoothing: antialiased;
+		text-transform: uppercase;
+		span {
+			font-weight: 900;
+			padding: 0 3px;
+			letter-spacing: 0.8px;
+		}
 	}
+
+	nav {
+		li {
+			margin: 0 1rem;
+			font-weight: 300;
+			svg {
+				height: 1.6rem;
+				width: 1.6rem;
+				margin-top: 3px;
+			}
+		}
+	}
+
 </style>
+

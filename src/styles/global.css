@@ -1,67 +1,124 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* https://github.com/tailwindlabs/tailwindcss/discussions/2917 */
+@layer base {
+	:root {
+		--edge-gutter: 2rem;
+		--max-container-width: 1035px;
+		--max-container-post-width: 760px;
+		--grey-background: #f5f5f7;
+		--font-mono: 'IBM Plex Mono', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+		--tw-gradient-to: #dfe4fe;
+		--tw-gradient-from: #fff;
+		--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+	}
+	html {
+		font-size: 62.5%; /* 1rem = 10px*/
+		overflow-y: scroll;
+
+		&.dark {
+			@apply text-gray-200;
+			header, footer {
+				@apply text-gray-400 border-gray-700;
+			}
+		}
+
+		body {
+			/*@apply flex flex-col justify-between;*/
+			font-size: 1.6rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			color: #151931;
+
+		}
+	}
+
+	.container-w {
+		max-width: var(--max-container-width) !important;
+	}
+
+	.container-post-w {
+		max-width: var(--max-container-post-width) !important;
+	}
+
+	main {
+		min-height: calc(100vh - 95px);
+		/*margin-top: 4rem;*/
+	}
+
+	.grad-bg {
+		background-image: linear-gradient(to bottom,var(--tw-gradient-stops));
+	}
+
+	.grad-heading {
+		background: linear-gradient(135deg, #fc845b, #fe497a);
+		color: transparent;
+		-webkit-background-clip: text;
+	}
+
+	.highlight {
+		color: inherit;
+		border-radius: 1em 0 1em 0.2em;
+		background-color: transparent;
+		background-image: linear-gradient(-100deg,rgba(125,211,252,.07) 50%,rgba(125,211,252,.11) 50%,rgba(125,211,252,.45) 100%);
+		background-size: 200% 100%;
+	}
+
+	.prose {
+		@apply prose-headings:!mb-3 prose-headings:!text-skin-base
+		prose-h3:italic prose-p:!text-skin-base
+		prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
+		hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
+		prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
+		prose-figcaption:!text-skin-base prose-figcaption:opacity-70
+		prose-strong:!text-skin-base
+		prose-ol:!text-skin-base
+		prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
+		prose-table:text-skin-base prose-th:border
+		prose-th:border-skin-line prose-td:border
+		prose-td:border-skin-line prose-img:mx-auto
+		prose-img:!mt-2 prose-img:border-2
+		prose-img:border-skin-line prose-hr:!border-skin-line;
+	}
+	.prose a {
+		@apply hover:!text-skin-accent;
+	}
+	.prose thead th:first-child,
+	tbody td:first-child,
+	tfoot td:first-child {
+		padding-left: 0.5714286em;
+	}
+	.prose h2#table-of-contents {
+		@apply mb-2;
+	}
+	.prose details {
+		@apply inline-block cursor-pointer select-none text-skin-base;
+	}
+	.prose summary {
+		@apply focus-outline;
+	}
+	.prose h2#table-of-contents + p {
+		@apply hidden;
+	}
+	.prose pre {
+		font-family: var(--font-mono);
+		font-size: 1.4rem;
+		letter-spacing: initial;
+    	line-height: 1.6;
+	}
+
+
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
-}
-a {
-	color: #3273dc;
-}
-nav a {
-	margin-right: 10px;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-content {
-	line-height: 1.6;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
-pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+
+@layer components {
+	.display-none {
+		@apply hidden;
+	}
+	.focus-outline {
+		@apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+	}
 }

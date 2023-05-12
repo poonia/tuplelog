@@ -1,0 +1,58 @@
+---
+import FormattedDate from './FormattedDate.astro';
+export interface Props {
+	post: object;
+}
+const { post } = Astro.props;
+---
+
+<article class="article-list-item">
+	<a href={`/blog/${post.slug}/`}>
+		<time class="text-green text-right date-time" datetime={post.data.pubDate}>
+			<FormattedDate date={post.data.pubDate} />
+		</time>
+		<h3>
+			{ post.data.title }
+		</h3>
+		<p class="desc">
+			{ post.data.description }
+		</p>
+	</a>
+</article>
+
+<style>
+	.article-list-item {
+		padding: 2rem;
+		margin-bottom: 2rem;
+		margin-left: -2rem;
+		border-bottom: 1px solid #f7f9fb;
+		
+
+		&:hover {
+		 	/*background:#f7f9fb;*/
+
+			h3 {
+				background: linear-gradient(135deg,#fc845b,#fe497a);
+				color: transparent;
+				-webkit-background-clip: text;
+			}
+		 }
+
+
+		.date-time {
+			color: #6e6e6e;
+			padding-bottom: 1.5rem;
+			font-size: 1.4rem;
+			font-weight: 200;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+			font-weight: 600;
+			letter-spacing: 0.3px;
+		}
+		.desc {
+			font-weight: 300;
+		}
+	}
+</style>
