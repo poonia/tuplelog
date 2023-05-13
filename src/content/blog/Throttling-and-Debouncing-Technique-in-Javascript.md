@@ -3,6 +3,7 @@ title: Throttling and Debouncing Technique in Javascript
 description: Explore how we can use throttling and debouncing techniques in javascript
 pubDate: 2021-03-04T05:00:00.000Z
 tags:
+  - Frontend
   - Javascript
 ---
 
