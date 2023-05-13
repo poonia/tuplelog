@@ -2,6 +2,8 @@
 title: Throttling and Debouncing Technique in Javascript
 description: Explore how we can use throttling and debouncing techniques in javascript
 pubDate: 2021-03-04T05:00:00.000Z
+tags:
+  - JS
 ---
 
 Throttling and debouncing are two techniques that can be used to optimize resource usage by reducing the frequency of trigger events. While these techniques can help conserve resources, they also involve a trade-off between the resolution of tracking user actions and optimal resource usage. The good news is that these techniques can be applied and unapplied without requiring changes to the event listener code.
