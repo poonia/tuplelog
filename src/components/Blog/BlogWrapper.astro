@@ -3,11 +3,11 @@ import BlogHeader from './BlogHeader.astro';
 import BlogContent from './BlogContent.astro';
 
 
-const { title, description, pubDate,timeToRead } = Astro.props;
+const { title, description, pubDate,timeToRead, tags } = Astro.props;
 ---
 <section>
   <article class="tl-blog">
-    <BlogHeader title={title} description={description} pubDate={pubDate}  timeToRead={timeToRead}></BlogHeader>
+    <BlogHeader title={title} description={description} pubDate={pubDate}  timeToRead={timeToRead} tags={tags}></BlogHeader>
     
     <BlogContent>
       <slot />

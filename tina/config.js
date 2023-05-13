@@ -46,11 +46,17 @@ export default defineConfig({
             isTitle: true,
           },
           {
+            label: "Tags",
+            name: "tags",
+            type: "string",
+            list: true
+          },
+          {
             label: "Date",
             name: "pubDate",
             type: "datetime",
             isTitle: true,
-          }
+          },
         ],
       },
       {
@@ -87,6 +93,12 @@ export default defineConfig({
             label: 'Body',
             isBody: true,
           },
+          {
+            label: "Tags",
+            name: "tags",
+            type: "string",
+            list: true
+          }
         ],
       },
     ],
