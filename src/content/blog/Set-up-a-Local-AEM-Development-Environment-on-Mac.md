@@ -74,11 +74,10 @@ These simple steps will help you get AEM up and running on your local machine.
 		- Visit Maven website to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
         
       - Extract after downloading `tar.gz` using the below command -
-       ```
-	$ tar -xvf apache-maven-3.9.2-bin.tar.gz
-	```
-      	Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
-				
+      	`$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
+	
+		Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
+	
 	* Set Maven Environment Variables - M2_HOME and Path
 	
 		- Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
@@ -119,9 +118,7 @@ These simple steps will help you get AEM up and running on your local machine.
   - Copy & Paste the aem quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
   - Now rename the jar in using naming convention suggested by AEM as -
         
-        ```
-	aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>
-	```
+        ` aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number> `
        
 	eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
         
@@ -139,16 +136,16 @@ These simple steps will help you get AEM up and running on your local machine.
 		license.properties
 	```
         
- - Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly we can install and start the publish instance.
+  - Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly we can install and start the publish instance.
         
- - We can also install and start the jar using below command in terminal  -
+  - We can also install and start the jar using below command in terminal  -
         
 	```shell
 	$ java -jar aem-author-p4502.jar
 	$ java -jar aem-publish-p4503.jar
 	```
         
-   or we can follow as adobe suggested on there AEM docs as - 
+      or we can follow as adobe suggested on there AEM docs as - 
         
 	```shell
 	$ java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket, server=y,suspend=n,address=30303 -jar aem-author-p4502.jar -gui -r"author,localdev"
