@@ -23,18 +23,17 @@ These simple steps will help you get AEM up and running on your local machine.
 
 - Install JAVA and set system environment with JAVA_HOME 
 	* Download & Install Java JDK 11
-        
 		- Use this [link](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz) for jdk11 or download any specific from [jdk archive](https://jdk.java.net/archive/) to download the .tar.gz
 		- Open the terminal and go to download directory of jdk.
 		- Use the following command to archive the tar files. Then, extract them to the directory of your choice. I recommend keeping your JDK setup in the "/Library/Java/JavaVirtualMachines/" directory.
             
-            ```bash
+            ```shell
             $ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
             $ sudo mv jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
             ```
             
 	* Setting Environment Variables - JAVA_HOME and Path
-		* Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
+		* Depending upon the terminal shell, if it’s `bash` open `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
         
         ```bash
         JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
@@ -50,12 +49,12 @@ These simple steps will help you get AEM up and running on your local machine.
     
 		- Open the Terminal and run `java -version` command. If installed properly you might see following output -
         
-        ```bash
-        $ java -version
-        openjdk version "11.0.2" 2019-01-15
-        OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
-        OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
-        ```
+		```bash
+		$ java -version
+		openjdk version "11.0.2" 2019-01-15
+		OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
+		OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
+		```
         
 		If you may receive an alert message with the following warning:
 		
@@ -66,7 +65,7 @@ These simple steps will help you get AEM up and running on your local machine.
 		
 		then go to System Preferences > Security and Privacy settings and then allow the app to execute by clicking on “Allow Anyway” button
     
-			By now Java is in place as required.
+		By now Java is in place as required.
 			
 * Install Maven and set M2_HOME
 
@@ -75,9 +74,9 @@ These simple steps will help you get AEM up and running on your local machine.
 		- Visit Maven website to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
         
       - Extract after downloading `tar.gz` using the below command -
-        ```
-        $ tar -xvf apache-maven-3.9.2-bin.tar.gz
-				```
+        ```shell
+	$ tar -xvf apache-maven-3.9.2-bin.tar.gz
+	```
         
         Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
 				
@@ -85,11 +84,11 @@ These simple steps will help you get AEM up and running on your local machine.
 	
 		- Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
         
-        ```bash
-        export M2_HOME="/Users/Alex/apache-maven-3.9.2"
-        PATH="${M2_HOME}/bin:${PATH}"
-        export PATH
-        ```
+		```bash
+		export M2_HOME="/Users/Alex/apache-maven-3.9.2"
+		PATH="${M2_HOME}/bin:${PATH}"
+		export PATH
+		```
         
 		- Once you have made these changes, you can relaunch the Terminal to apply the updated profile. Alternatively, you can run the commands `source .bash_profile` or `source .zshrc` to apply the updated environment variables.
 
@@ -105,8 +104,7 @@ These simple steps will help you get AEM up and running on your local machine.
 			Default locale: en_CA, platform encoding: UTF-8
 			OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
 			```
-    
-  
+			
 * Setup AEM jar
 
 	 - Download AEM SDK from adobe website if you have a valid licence - [https://downloads.experiencecloud.adobe.com](https://downloads.experiencecloud.adobe.com/) 
@@ -116,15 +114,15 @@ These simple steps will help you get AEM up and running on your local machine.
            
 	```bash
 	~/aem
-		/author
-		/publish
+	   /author
+           /publish
 	```
   - Copy & Paste the aem quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
   - Now rename the jar in using naming convention suggested by AEM as -
         
         ```
-				aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>
-				```
+	aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>
+	```
        
 	eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
         
@@ -133,27 +131,27 @@ These simple steps will help you get AEM up and running on your local machine.
      After making these changes now our folder structure looks like -
         
 	```bash
-	~/aem
-			/author
-					aem-author-p4502.jar
-					license.properties
-			/publish
-					aem-publish-p4503.jar
-					license.properties
+	 ~/aem
+	    /author
+		aem-author-p4502.jar
+		license.properties
+	    /publish
+		aem-publish-p4503.jar
+		license.properties
 	```
         
  - Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly we can install and start the publish instance.
         
  - We can also install and start the jar using below command in terminal  -
         
-	```bash
-	$ java -jar aem-author-p4502.jar // for author instance
-	$ java -jar aem-publish-p4503.jar // for publish instance
+	```shell
+	$ java -jar aem-author-p4502.jar
+	$ java -jar aem-publish-p4503.jar
 	```
         
    or we can follow as adobe suggested on there AEM docs as - 
         
-	```bash
+	```shell
 	$ java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket, server=y,suspend=n,address=30303 -jar aem-author-p4502.jar -gui -r"author,localdev"
 	```
         
