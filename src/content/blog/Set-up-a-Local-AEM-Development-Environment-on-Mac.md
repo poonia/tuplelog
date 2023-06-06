@@ -27,19 +27,19 @@ These simple steps will help you get AEM up and running on your local machine.
 		- Open the terminal and go to download directory of jdk.
 		- Use the following command to archive the tar files. Then, extract them to the directory of your choice. I recommend keeping your JDK setup in the "/Library/Java/JavaVirtualMachines/" directory.
             
-            ```
-            $ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
-            $ sudo mv jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
-            ```
+```
+$ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
+$ sudo mv jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
+```
             
 	* Setting Environment Variables - JAVA_HOME and Path
 		* Depending upon the terminal shell, if it’s `bash` open `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
         
-        ```bash
-        JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
-        PATH="${JAVA_HOME}/bin:${PATH}"
-        export PATH
-        ```
+```bash
+JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
+PATH="${JAVA_HOME}/bin:${PATH}"
+export PATH
+```
         
         *these file lies under user root directory, it might be hidden by default. Use `cmd + Shift + .` to toggle show hide in finder.*
         
@@ -49,19 +49,19 @@ These simple steps will help you get AEM up and running on your local machine.
     
 		- Open the Terminal and run `java -version` command. If installed properly you might see following output -
         
-		```bash
-		$ java -version
-		openjdk version "11.0.2" 2019-01-15
-		OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
-		OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
-		```
+```bash
+$ java -version
+openjdk version "11.0.2" 2019-01-15
+OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
+```
         
 		If you may receive an alert message with the following warning:
 		
-		```text
-		“jdk-11.0.2.jdk” cannot be opened because the developer cannot be verified.
-		macOS cannot verify that this app is free from malware
-		```
+```text
+“jdk-11.0.2.jdk” cannot be opened because the developer cannot be verified.
+macOS cannot verify that this app is free from malware
+```
 		
 		then go to System Preferences > Security and Privacy settings and then allow the app to execute by clicking on “Allow Anyway” button
     
