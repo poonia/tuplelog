@@ -1,9 +1,8 @@
 ---
 title: Set up a Local AEM Development Environment on Mac
 description: >-
-  This guide covers the important topics of local installation, Apache Maven,
-  and Java for setting up a local development environment for Adobe Experience
-  Manager (AEM).
+  This guide covers the step by step guide to locally setup AEM on Mac along
+  with Maven and Java.
 tags:
   - AEM
 pubDate: 2023-05-02T04:00:00.000Z
