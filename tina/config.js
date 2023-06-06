@@ -1,7 +1,13 @@
 import { defineConfig } from "tinacms";
+import data from './tags.json'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+
+const allTags = data.tags?.map((tag) => ({
+  label: tag.label,
+  value: tag.name,
+}));
 
 export default defineConfig({
   branch,
@@ -48,6 +54,7 @@ export default defineConfig({
           {
             label: "Tags",
             name: "tags",
+            options: allTags,
             type: "string",
             list: true
           },

@@ -7,7 +7,7 @@ const { title, description, pubDate,remarkPluginFrontmatter,tags } = Astro.props
 <div class="post-head grad-bg">
     <div class="mx-auto w-full container-w text-left">
         <h1 class="title grad-heading">{title}</h1>
-        <h2 class="desc">{description}</h2>
+        <h2 class="desc">{description}</h2> 
         { tags?.map((tag) => (
             <span class="highlight tags">
               {tag}
