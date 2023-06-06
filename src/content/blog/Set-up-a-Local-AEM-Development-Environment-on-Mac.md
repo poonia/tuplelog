@@ -84,9 +84,6 @@ export PATH
 ```
 
 * Once you have made these changes, you can relaunch the Terminal to apply the updated profile. Alternatively, you can run the commands `source .bash_profile` or `source .zshrc` to apply the updated environment variables.
-
-<!---->
-
 * Verify Maven installation
   * Open the Terminal and run the `mvn -version` command, If installed properly you might see following output -
 
