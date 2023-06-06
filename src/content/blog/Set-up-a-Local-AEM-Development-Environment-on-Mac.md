@@ -77,8 +77,7 @@ These simple steps will help you get AEM up and running on your local machine.
         ```shell
 	$ tar -xvf apache-maven-3.9.2-bin.tar.gz
 	```
-        
-        Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
+      Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
 				
 	* Set Maven Environment Variables - M2_HOME and Path
 	
