@@ -27,7 +27,7 @@ These simple steps will help you get AEM up and running on your local machine.
 		- Open the terminal and go to download directory of jdk.
 		- Use the following command to archive the tar files. Then, extract them to the directory of your choice. I recommend keeping your JDK setup in the "/Library/Java/JavaVirtualMachines/" directory.
             
-            ```shell
+            ```
             $ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
             $ sudo mv jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
             ```
