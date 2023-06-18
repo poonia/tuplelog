@@ -7,14 +7,14 @@ const { post } = Astro.props;
 ---
 
 <article class="article-list-item">
-	<a href={`/blog/${post.slug}/`}>
+	<a href={`/blog/${post.slug}/`} class="article-list-item-link">
 		<time class="text-green text-right date-time" datetime={post.data.pubDate}>
 			<FormattedDate date={post.data.pubDate} />
 		</time>
-		<h3>
+		<h3 class="font-primary title">
 			{ post.data.title }
 		</h3>
-		<p class="desc">
+		<p class="desc font-secondry">
 			{ post.data.description }
 		</p>
 	</a>
@@ -22,19 +22,25 @@ const { post } = Astro.props;
 
 <style>
 	.article-list-item {
-		padding: 2rem;
-		margin-bottom: 2rem;
-		margin-left: -2rem;
-		border-bottom: 1px solid #f7f9fb;
+		padding: 2rem 0 0;
 		
+		.article-list-item-link {
+			color: var(--color-primary);
+			margin-bottom: 1rem;
+			border-bottom: 1px solid #eeeff1;
+			display:block;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 
 		&:hover {
 		 	/*background:#f7f9fb;*/
 
 			h3 {
-				background: linear-gradient(135deg,#fc845b,#fe497a);
-				color: transparent;
-				-webkit-background-clip: text;
+				/* background-color: var(--bg-tag-color);
+    			color: var(--text-tag-color); */
 			}
 		 }
 
@@ -46,13 +52,16 @@ const { post } = Astro.props;
 			font-weight: 200;
 		}
 
-		h3 {
+		.title {
 			font-size: 2.2rem;
-			font-weight: 600;
+			font-weight: 500;
 			letter-spacing: 0.3px;
+			margin-bottom: 1.2rem;
+			line-height: 1;
 		}
 		.desc {
-			font-weight: 300;
+			font-size: 2rem;
+			margin-bottom: 2rem;
 		}
 	}
 </style>

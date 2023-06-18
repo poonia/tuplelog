@@ -20,24 +20,26 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="w-full">
-			<div class="banner text-center grad-bg">
-				<div class="w-full container-w mx-auto flex flex-col">
-					<h3 class="banner-title grad-heading">
+		<main class="is-full-width">
+			<div class="is-horizontal-align banner merge-header-banner">
+				<div class="is-full-width container-w text-center flex f-col m-b-3 m-t-2">
+					<h2 class="font-primary banner-title">
 						Insight logs
-					</h3>
-					<p class="banner-desc">
+					</h2>
+					<p class="font-secondry banner-desc m-b-3">
 						Tuplelog contains a collection of writings, insights, notes and learning experiences for frontend development
 					</p>
 				</div>
 			</div>
-			<section class="listing mx-auto w-full container-w">
-				<h3 class="my-10 text-4xl font-bold ">Recent posts</h3>
+			<section class="listing is-full-width is-horizontal-align flex">
+				<div class="is-full-width container-w flex f-col m-b-3 m-t-2">
+				<h3 class="font-secondry font-bold title">Recent posts</h3>
 				{
 					posts.map((post) => (
 						<BlogListItem post={post} />
 					))
 				}
+				</div>
 			</section>
 
 		</main>
@@ -45,31 +47,34 @@ const posts = (await getCollection('blog')).sort(
 	</body>
 </html>
 <style>
-	.banner {
-		padding: 8rem 2rem;
-		width: 100%;
-		color: #001F3F;
-		margin-bottom: 8rem;
+	.banner-title {
+		font-size: 4.3rem;
+		font-weight: 800;
+		line-height: 5rem;
+		padding-bottom: 2.6rem;
 
-		.banner-title {
-			font-size: 3.7rem;
-			font-weight: 800;
-			line-height: 5rem;
-			padding-bottom: 3rem;
+		@media screen(md) {
 
-			@media screen(md) {
-
-			}
-		}
-
-		.banner-desc {
-			font-size: 2.2rem;
-			font-weight: 300;
-			letter-spacing: 0.3px;
-
-			@media screen(md) {
-
-			}
 		}
 	}
+
+	.banner-desc {
+		font-size: 2.7rem;
+		font-weight: 600;
+		letter-spacing: 0.3px;
+
+		@media screen(md) {
+
+		}
+	}
+
+	.listing {
+		padding: 0 var(--edge-gutter);
+		.title {
+			font-size: 2.5rem;
+			font-weight: 600;
+			letter-spacing: 0.2px;
+		}
+	}
+	
 </style>

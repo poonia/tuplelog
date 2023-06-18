@@ -6,19 +6,19 @@ import SvgIcon from './SvgIcon.astro'
 
 <header class="header max-w-full ">
 	 <!-- 🫧🕸️ 🏔️ ⛩️ 🧿 🌀 ⌘ 🀤 -->
-	<div class="container-w mx-auto w-full flex justify-between">
-		<a href="/" class="header__logo">
+	<div class="container-w header-container">
+		<a href="/" class="brand">
 			🌀 { SITE.nameToken.initial }<span class="highlight">{ SITE.nameToken.last }</span>
 		</a>
-		<nav>
+		<nav class="navigation">
 			<ul class="list-none flex">
-				<li>
-					<a href="/blog" title="blog"> Blogs </a>
+				<li class="nav-item">
+					<a href="/blog" title="blog" class="nav-link highlight"> Blogs </a>
 				</li>
-				<li>
-					<a href="/about" title="about"> About </a>
+				<li class="nav-item">
+					<a href="/about" title="about" class="nav-link highlight"> About </a>
 				</li>
-				<li class="highlight">
+				<!-- <li class="highlight">
 					<a href="/rss.xml" title="RSS">
 						<SvgIcon>
 							<path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -26,56 +26,53 @@ import SvgIcon from './SvgIcon.astro'
 							<circle cx="5" cy="19" r="1"></circle>
 						</SvgIcon>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 	</div>
 </header>
 
 <style>
+	/* Header */
 	.header {
-		@apply flex;
+		display: flex;
 		height: 40px;
 		background: transparent;
-		-webkit-backdrop-filter: saturate(180%) blur(20px);
-		backdrop-filter: saturate(180%) blur(20px);
-		/*position: fixed;*/
-		/*top: 0;*/
-		/*left: 0;*/
 		width: 100%;
-		transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
-		/*box-shadow: 0px 0px 6px #00000021;*/
-		padding: 0 2rem;
-		align-content: center;
-		flex-wrap: wrap;
-		color: #001F3F;
+		padding: 0 var(--edge-gutter);
+		justify-content: center;
 	}
-
-	.header__logo {
+	.header-container {
+		display: flex;
+		flex-grow: 1;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.brand {
 		font-size: 1.8rem;
 		font-weight: 800;
 		line-height: 2.2rem;
-		letter-spacing: 0.2px;
+		letter-spacing: .2px;
 		-webkit-font-smoothing: antialiased;
 		text-transform: uppercase;
-		span {
-			font-weight: 900;
-			padding: 0 3px;
-			letter-spacing: 0.8px;
-		}
+		font-family: var(--font-family-sans);
+		color: var(--color-primary);
+	}
+	.brand:hover {
+		text-decoration: none !important;
+	}
+	.brand span {
+		font-weight: 900;
+		padding: 0 3px;
+		letter-spacing: .8px;
+	}
+	.nav-item {
+		padding: 0 1rem;
+	}
+	.nav-link {
+		font-family: var(--font-family-serif-primary);
 	}
 
-	nav {
-		li {
-			margin: 0 1rem;
-			font-weight: 300;
-			svg {
-				height: 1.6rem;
-				width: 1.6rem;
-				margin-top: 3px;
-			}
-		}
-	}
 
 </style>
 
