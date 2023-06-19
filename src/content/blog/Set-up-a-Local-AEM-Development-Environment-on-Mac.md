@@ -23,7 +23,7 @@ These simple steps will help you get AEM up and running on your local machine.
 
 #### Basic steps to setup AEM local instance
 
-##### Java
+##### [Java](#java)
 
 AEM is Java based CMS. To begin you need to install Java language using JDK(Java Development Kit) which includes the Java Runtime Environment (JRE), Java compiler, and debugger. Once JDK is installed then you need to configure the environment variable `JAVA_HOME` for referencing Java required by AEM or elsewhere. 
 
