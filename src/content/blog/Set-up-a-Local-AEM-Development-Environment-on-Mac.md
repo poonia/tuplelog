@@ -27,7 +27,7 @@ These simple steps will help you get AEM up and running on your local machine.
 
 AEM is Java based CMS. To begin you need to install Java language using JDK(Java Development Kit) which includes the Java Runtime Environment (JRE), Java compiler, and debugger. Once JDK is installed then you need to configure the environment variable `JAVA_HOME` for referencing Java required by AEM or elsewhere. 
 
-If Java(JDK) is already installed and system variables are already in place then you can directly jump to the Maven and AEM steps.
+If Java(JDK) is already installed and system variables are already in place then you can directly jump to the [Maven](#maven) and AEM steps.
 
 Follow the below steps to download & Install Java JDK 11
 
