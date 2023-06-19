@@ -117,18 +117,17 @@ OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
 
 ##### [AEM](#AEM)
 
-Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have AEM jar locally then you can download from  [Adobe Licensing Website. ](https://licensing.adobe.com/ "download AEM here")
+Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have an AEM jar locally then you can download it from  [Adobe Licensing Website](https://licensing.adobe.com/ "download AEM here"), only valid users have access to this page.
 
-Setup AEM jar
+Now once you have .jar and the license downloaded, follow the below steps to install AEM - 
 
-* Download AEM SDK from adobe website if you have a valid licence - [https://downloads.experiencecloud.adobe.com](https://downloads.experiencecloud.adobe.com/)
-* Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart Jar and a license.properties.
-* Create a folder folder structure with any name like -
+* Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart jar and a license.properties.
+* Create a folder structure with any name like -
 
-```bat
-~/aem
-  /author
-  /publish
+```markdown
+|-- aem
+  |-- author
+  |-- publish
 ```
 
 * Copy & Paste the aem quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
