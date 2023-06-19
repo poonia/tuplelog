@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
 		<Header title={SITE_TITLE} />
 		<main class="is-full-width">
 			<div class="is-horizontal-align banner merge-header-banner">
-				<div class="is-full-width container-w text-center flex f-col m-b-3 m-t-2">
+				<div class="is-full-width container-sm-w text-center flex f-col m-b-3 m-t-2">
 					<h2 class="font-primary banner-title">
 						Insight logs
 					</h2>
@@ -32,7 +32,7 @@ const posts = (await getCollection('blog')).sort(
 				</div>
 			</div>
 			<section class="listing is-full-width is-horizontal-align flex">
-				<div class="is-full-width container-w flex f-col m-b-3 m-t-2">
+				<div class="is-full-width container-sm-w flex f-col m-b-3 m-t-2">
 				<h3 class="font-secondry font-bold title">Recent posts</h3>
 				{
 					posts.map((post) => (

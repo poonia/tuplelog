@@ -39,8 +39,8 @@
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     /* container widths */
     --edge-gutter: 2rem;
-    --max-container-width: 1035px;
-	--max-container-post-width: 760px;
+    --max-container-width: 960px;
+	  --max-container-post-width: 760px;
 }
 
 html {
@@ -503,11 +503,11 @@ iframe {
     -webkit-font-smoothing: antialiased;
 }
 
-.container-w {
+.container-w, .container-lg-w {
     max-width: var(--max-container-width) !important;
 }
 
-.container-post-w {
+.container-sm-w {
     max-width: var(--max-container-post-width) !important;
 }
 

@@ -2,13 +2,17 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} tuplelog.com. All rights reserved.
+<footer class="is-horizontal-align">
+	<div class="container-sm-w is-full-width flex">
+		&copy; {today.getFullYear()} tuplelog.com. All rights reserved.
+	</div>
+	
 </footer>
 <style>
 	footer {
-		background: var(--grey-background);
-		padding: 3rem 2rem;
+		padding: 2rem 2rem;
 		text-align: left;
+		border-top: 1px solid #eee;
+		font-family: var(--font-family-serif-secondry);
 	}
 </style>
