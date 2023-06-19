@@ -77,16 +77,16 @@ then go to System Preferences > Security and Privacy settings and then allow the
 echo $JAVA_HOME
 ```
 
-Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME. Follow the below steps for that -  
+Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME. 
 
-* Install Maven and set M2\_HOME
-  * Download & Install Maven
-    * Visit the Maven website to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
-    * Extract after downloading `tar.gz` using the below command - `$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
+Follow the below steps to install Maven and configure `M2_HOME` -
 
-      Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
-  * Set Maven Environment Variables - M2\_HOME and Path
-    * Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
+* Visit the [Maven website](https://maven.apache.org/download.cgi) to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
+* Extract after downloading `tar.gz` using the below command - `$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
+
+  Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
+* Set Maven Environment Variables - M2\_HOME and Path
+  * Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
 
 ```bat
 export M2_HOME="/Users/Alex/apache-maven-3.9.2"
