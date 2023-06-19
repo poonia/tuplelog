@@ -25,14 +25,14 @@ These simple steps will help you get AEM up and running on your local machine.
 
 ##### [Java](#java)
 
-AEM is Java based CMS. To begin you need to install Java language using JDK(Java Development Kit) which includes the Java Runtime Environment (JRE), Java compiler, and debugger. Once JDK is installed then you need to configure the environment variable `JAVA_HOME` for referencing Java required by AEM or elsewhere. 
+AEM is Java based CMS. To begin you need to install Java language using JDK(Java Development Kit) which includes the Java Runtime Environment (JRE), Java compiler, and debugger. Once JDK is installed then you need to configure the environment variable `JAVA_HOME` for referencing Java required by AEM or elsewhere.
 
 If Java(JDK) is already installed and system variables are already in place then you can directly jump to the [Maven](#maven) and [AEM](#AEM) steps.
 
 Follow the below steps to download & Install Java JDK 11
 
 * Use this [link](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz) for jdk11 or download any specific from [jdk archive](https://jdk.java.net/archive/) to download the .tar.gz
-* Use the following command given below to archive the tar files. Then, extract them to the directory of your choice. The preferred JDK setup directory is `/Library/Java/JavaVirtualMachines/` 
+* Use the following command given below to archive the tar files. Then, extract them to the directory of your choice. The preferred JDK setup directory is `/Library/Java/JavaVirtualMachines/`
 
 ```powershell
 $ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
@@ -53,7 +53,7 @@ export PATH
 
 Once you have made these changes, you can relaunch the Terminal to apply the updated profile. Alternatively, you can run the commands `source .bash_profile` or `source .zshrc` to apply the updated environment variables.
 
-To ensure JDK and `JAVA_HOME` is setup correctly you can verify using the below commands - 
+To ensure JDK and `JAVA_HOME` is setup correctly you can verify using the below commands -
 
 * For JDK, run `java -version` command. If installed properly you might see the following output -
 
@@ -77,15 +77,14 @@ then go to System Preferences > Security and Privacy settings and then allow the
 
 ##### [Maven](#maven)
 
-Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME. 
+Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME.
 
 Follow the below steps to install Maven and configure `M2_HOME` -
 
 * Visit the [Maven website](https://maven.apache.org/download.cgi) to download Maven “Binary tar.gz archive” file.
 * Extract after downloading `tar.gz` using the below command -
 
-    `$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
-
+  `$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
 * Above will extract binaries in the `apache-maven-3.9.2` directory, which you can move anywhere you want.
 
 Now set Maven environment variables  `M2_HOME` and `PATH`  based on the Maven directory
@@ -100,9 +99,9 @@ export PATH
 
 Once you have made these changes, you can relaunch the Terminal to apply the updated profile. Alternatively, you can run the commands `source .bash_profile` or `source .zshrc` to apply the updated environment variables.
 
-To ensure `mvn` and `M2_HOME` is setup correctly you can verify using the below commands -  
+To ensure `mvn` and `M2_HOME` is setup correctly you can verify using the below commands -
 
- Run the `mvn -version` command in the terminal, If installed properly you might see the following output -
+Run the `mvn -version` command in the terminal, If installed properly you might see the following output -
 
 ```powershell
 $ mvn -version
@@ -119,7 +118,7 @@ OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
 
 Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have an AEM jar locally then you can download it from  [Adobe Licensing Website](https://licensing.adobe.com/ "download AEM here"), only valid users have access to this page.
 
-Now once you have .jar and the license downloaded, follow the below steps to install AEM - 
+Now once you have .jar and the license downloaded, follow the below steps to install AEM -
 
 * Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart jar and a license.properties.
 * Create a folder structure with any name like -
@@ -130,14 +129,14 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
   |-- publish
 ```
 
-* Copy & Paste the aem quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
-* Now rename the jar in using naming convention suggested by AEM as - `aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>`
+* Copy & Paste the AEM quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
+* Now rename the jar using the naming convention suggested by AEM as - 
 
-  eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
+   `aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>`
 
-  By following this jar naming convention we set the run mode to author or publish and explicitly define the port number.
+* By following this jar naming convention we set the run mode to author or publish and explicitly define the port number.
 
-  After making these changes now our folder structure looks like -
+   eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
 
 ```bat
  ~/aem
