@@ -1,5 +1,5 @@
 ---
-title: Set up a Local AEM Development Environment on Mac
+title: Setup a Local AEM Development Environment on Mac
 description: >-
   This guide covers the step by step guide to locally setup AEM on Mac along
   with Maven and Java.
@@ -19,36 +19,41 @@ These simple steps will help you get AEM up and running on your local machine.
 
 * Java 8/11 (Open JDK or Oracle Java)
 * Maven (3.5.3+)
-* AEM Quickstart Jar with licence
+* AEM Quickstart Jar with license
 
 #### Basic steps to setup AEM local instance -
 
-* Install JAVA and set system environment with JAVA\_HOME
-  * Download & Install Java JDK 11
-    * Use this [link](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz) for jdk11 or download any specific from [jdk archive](https://jdk.java.net/archive/) to download the .tar.gz
-    * Open the terminal and go to download directory of jdk.
-    * Use the following command to archive the tar files. Then, extract them to the directory of your choice. I recommend keeping your JDK setup in the "/Library/Java/JavaVirtualMachines/" directory.
+AEM is Java based CMS. To begin you need to install Java language using JDK(Java Development Kit) which includes the Java Runtime Environment (JRE), Java compiler, and debugger. Once JDK is installed then you need to configure the environment variable `JAVA_HOME` for referencing Java required by AEM or elsewhere. 
 
-```bat
+If Java(JDK) is already installed and system variables are already in place then you can directly jump to the Maven and AEM steps.
+
+Follow the below steps to download & Install Java JDK 11
+
+* Use this [link](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz) for jdk11 or download any specific from [jdk archive](https://jdk.java.net/archive/) to download the .tar.gz
+* Use the following command given below to archive the tar files. Then, extract them to the directory of your choice. The preferred JDK setup directory is `/Library/Java/JavaVirtualMachines/` 
+
+```powershell
 $ tar -xvf openjdk-11.0.2_osx-x64_bin.tar.gz
 $ sudo mv jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
 ```
 
-* Setting Environment Variables - JAVA\_HOME and Path
-  * Depending upon the terminal shell, if it’s `bash` open `.bash_profile` or if it's `zsh` then open `.zshrc` and add following entries at the bottom of file -
+Once JDK is installed, configure environment variables `JAVA_HOME` and `PATH`
 
-```bat
+* Depending upon the terminal shell, if it’s `bash` open `.bash_profile` or if it's `zsh` then open `.zshrc` and add the following entries at the bottom of the file -
+
+```shell
 JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
 PATH="${JAVA_HOME}/bin:${PATH}"
 export PATH
 ```
 
-*these file lies under user root directory, it might be hidden by default. Use `cmd + Shift + .` to toggle show hide in finder.*
+*NOTE: these files lie under the user root directory, they might be hidden by default. Use `cmd + Shift + .` to toggle show hide in finder.*
 
 Once you have made these changes, you can relaunch the Terminal to apply the updated profile. Alternatively, you can run the commands `source .bash_profile` or `source .zshrc` to apply the updated environment variables.
 
-* Verify JDK installation
-  * Open the Terminal and run `java -version` command. If installed properly you might see following output -
+To ensure JDK and `JAVA_HOME` is setup correctly you can verify using the below commands - 
+
+* For JDK, run `java -version` command. If installed properly you might see the following output -
 
 ```bat
 $ java -version
@@ -66,11 +71,17 @@ macOS cannot verify that this app is free from malware
 
 then go to System Preferences > Security and Privacy settings and then allow the app to execute by clicking on “Allow Anyway” button
 
-By now Java is in place as required.
+* For JAVA\_HOME, run echo $JAVA\_HOME command in terminal -
+
+```powershell
+echo $JAVA_HOME
+```
+
+Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME. Follow the below steps for that -  
 
 * Install Maven and set M2\_HOME
   * Download & Install Maven
-    * Visit Maven website to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
+    * Visit the Maven website to download - [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  and download the “Binary tar.gz archive” file.
     * Extract after downloading `tar.gz` using the below command - `$ tar -xvf apache-maven-3.9.2-bin.tar.gz`
 
       Above will extract binaries in the “apache-maven-3.9.2” directory, which you can move anywhere you want.
