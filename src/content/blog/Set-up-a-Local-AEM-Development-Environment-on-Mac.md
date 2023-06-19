@@ -75,7 +75,7 @@ then go to System Preferences > Security and Privacy settings and then allow the
 
 * For `JAVA_HOME`, run echo $JAVA\_HOME command in the terminal.
 
-##### Maven
+##### [Maven](#maven)
 
 Now you need to install Maven. The Maven is a tool that helps in simplifying & uniform the build processes, dependency management, etc. Just like JDK, you need to install Maven and configure the environment variable M2\_HOME. 
 
