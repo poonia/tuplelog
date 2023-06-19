@@ -117,10 +117,13 @@ OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
 
 ##### [AEM](#AEM)
 
-* Setup AEM jar
-  * Download AEM SDK from adobe website if you have a valid licence - [https://downloads.experiencecloud.adobe.com](https://downloads.experiencecloud.adobe.com/)
-  * Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart Jar and a license.properties.
-  * Create a folder folder structure with any name like -
+Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have AEM jar locally then you can download from  [Adobe Licensing Website. ](https://licensing.adobe.com/ "download AEM here")
+
+Setup AEM jar
+
+* Download AEM SDK from adobe website if you have a valid licence - [https://downloads.experiencecloud.adobe.com](https://downloads.experiencecloud.adobe.com/)
+* Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart Jar and a license.properties.
+* Create a folder folder structure with any name like -
 
 ```bat
 ~/aem
