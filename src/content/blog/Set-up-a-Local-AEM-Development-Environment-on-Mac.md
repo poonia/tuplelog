@@ -124,28 +124,27 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 * Create a folder structure with any name like -
 
 ```markdown
-|-- aem
-  |-- author
-  |-- publish
+├── aem
+├  ├── author
+├  ├── publish
 ```
 
 * Copy & Paste the AEM quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
-* Now rename the jar using the naming convention suggested by AEM as - 
+* Now rename the jar using the naming convention suggested by AEM as -
 
-   `aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>`
-
+  `aem<optional-version-or-indentifier>-<standard-run-mode>-p<port-number>`
 * By following this jar naming convention we set the run mode to author or publish and explicitly define the port number.
 
-   eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
+  eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
 
 ```markdown
- |-- aem
-    |-- author
-				|-- aem-author-p4502.jar
-				|-- license.properties
-    |-- publish
-				|-- aem-publish-p4503.jar
-				|-- license.properties
+├── aem
+├   ├── author
+├		├		├── aem-author-p4502.jar
+├		├		├── license.properties
+├   ├── publish
+├		├		├── aem-publish-p4503.jar
+├		├		├── license.properties
 ```
 
 * Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly, we can install and start the publish instance.
