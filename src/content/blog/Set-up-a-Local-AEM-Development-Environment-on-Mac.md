@@ -125,8 +125,8 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 
 ```markdown
 ├── aem
-├  ├── author
-├  ├── publish
+  ├── author
+  ├── publish
 ```
 
 * Copy & Paste the AEM quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
@@ -139,12 +139,12 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 
 ```markdown
 ├── aem
-├   ├── author
-├		├		├── aem-author-p4502.jar
-├		├		├── license.properties
-├   ├── publish
-├		├		├── aem-publish-p4503.jar
-├		├		├── license.properties
+  ├── author
+		├── aem-author-p4502.jar
+		├── license.properties
+  ├── publish
+		├── aem-publish-p4503.jar
+		├── license.properties
 ```
 
 * Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly, we can install and start the publish instance.
