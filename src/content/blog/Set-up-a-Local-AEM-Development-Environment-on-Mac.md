@@ -138,30 +138,36 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 
    eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
 
-```bat
- ~/aem
-    /author
-			aem-author-p4502.jar
-			license.properties
-    /publish
-			aem-publish-p4503.jar
-			license.properties
+```markdown
+ |-- aem
+    |-- author
+				|-- aem-author-p4502.jar
+				|-- license.properties
+    |-- publish
+				|-- aem-publish-p4503.jar
+				|-- license.properties
 ```
 
-* Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly we can install and start the publish instance.
-* We can also install and start the jar using below command in terminal  -
+* Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly, we can install and start the publish instance.
+* We can also install and start the jar using the below command in terminal  -
 
 ```bat
 $ java -jar aem-author-p4502.jar
 $ java -jar aem-publish-p4503.jar
 ```
 
-or we can follow as adobe suggested on there AEM docs as -
+or we can follow as the run command Adobe suggested on their AEM docs -
 
 ```bat
 $ java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket, server=y,suspend=n,address=30303 -jar aem-author-p4502.jar -gui -r"author,localdev"
 ```
 
-As AEM instance started, we can visit [localhost:4502/](http://localhost:4502/a) for author.
+As the AEM instance started, we can visit [localhost:4502/](http://localhost:4502/a) for the author.
 
-We can use the default username/password for local is admin/admin to login..
+We can use the default username/password for local admin/admin to log in.
+
+#### Conclusion
+
+In this article, you explore how to set up Java and Maven to install and used AEM for web application development.
+
+Thanks for Reading.
