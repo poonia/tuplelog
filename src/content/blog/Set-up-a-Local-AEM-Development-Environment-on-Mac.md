@@ -1,14 +1,14 @@
 ---
-title: Setup a Local AEM Development Environment on Mac
+title: How to Set Up AEM Local Development Environment on Mac
 description: >-
-  This guide covers the step by step guide to locally setup AEM on Mac along
-  with Maven and Java.
+  This article provides a step-by-step guide to setting up Adobe Experience
+  Manager (AEM) locally on a Mac, including the installation of Maven and Java.
 tags:
   - AEM
 pubDate: 2023-05-02T04:00:00.000Z
 ---
 
-These simple steps will help you get AEM up and running on your local machine.
+This guide provides step-by-step instructions for setting up an AEM environment on your local machine, enabling you to develop applications effectively. By following these straightforward steps, you'll have AEM installed and running smoothly on your local machine in no time.
 
 #### Minimum system requirements
 
@@ -91,7 +91,7 @@ Now set Maven environment variables  `M2_HOME` and `PATH`  based on the Maven di
 
 Depending upon the terminal shell, if it’s `bash` open  `.bash_profile` or if it's `zsh` then open `.zshrc` and add the following entries at the bottom of the file -
 
-```bat
+```shell
 export M2_HOME="/Users/Alex/apache-maven-3.9.2"
 PATH="${M2_HOME}/bin:${PATH}"
 export PATH
@@ -124,9 +124,9 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 * Create a folder structure with any name like -
 
 ```markdown
-├── aem
-  ├── author
-  ├── publish
+aem\
+| |-- author\
+| |-- publish\
 ```
 
 * Copy & Paste the AEM quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
@@ -138,26 +138,26 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
   eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
 
 ```markdown
-├── aem
-  ├── author
-		├── aem-author-p4502.jar
-		├── license.properties
-  ├── publish
-		├── aem-publish-p4503.jar
-		├── license.properties
+aem\
+|	|-- author\
+|	|	|-- aem-author-p4502.jar
+|	|	|-- license.properties
+|	|-- publish\
+|	|	|--	aem-publish-p4503.jar
+|	|	|-- license.properties
 ```
 
 * Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly, we can install and start the publish instance.
 * We can also install and start the jar using the below command in terminal  -
 
-```bat
+```powershell
 $ java -jar aem-author-p4502.jar
 $ java -jar aem-publish-p4503.jar
 ```
 
 or we can follow as the run command Adobe suggested on their AEM docs -
 
-```bat
+```powershell
 $ java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket, server=y,suspend=n,address=30303 -jar aem-author-p4502.jar -gui -r"author,localdev"
 ```
 
