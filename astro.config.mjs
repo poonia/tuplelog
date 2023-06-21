@@ -23,10 +23,11 @@ export default defineConfig({
       })
   ],
   markdown:{
-      shikiConfig: {
-          theme: oneDarkPro,
-          wrap: true,
-      },
+      syntaxHighlight: 'prism',
+      // shikiConfig: {
+      //     theme: oneDarkPro,
+      //     wrap: true,
+      // },
       extendDefaultPlugins: true,
       remarkPlugins: [remarkReadingTime,remarkToc,a11yEmoji],
       rehypePlugins: [
