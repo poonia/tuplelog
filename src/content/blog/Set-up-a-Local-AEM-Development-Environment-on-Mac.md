@@ -123,7 +123,7 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 * Unzip the JAR file from the downloaded ZIP file and get a copy of the AEM QuickStart jar and a license.properties.
 * Create a folder structure with any name like -
 
-```markdown
+```treeview
 aem\
 | |-- author\
 | |-- publish\
@@ -137,7 +137,7 @@ aem\
 
   eg - `aem6.5-author-p4502.jar, aem-author-p4502.jar, aem-publish-p4503.jar`
 
-```markdown
+```treeview
 aem\
 |	|-- author\
 |	|	|-- aem-author-p4502.jar
