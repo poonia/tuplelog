@@ -125,8 +125,8 @@ Now once you have .jar and the license downloaded, follow the below steps to ins
 
 ```treeview
 aem\
-| |-- author\
-| |-- publish\
+|   |-- author\
+|   |-- publish\
 ```
 
 * Copy & Paste the AEM quickstart jar and [licence.properties](http://licence.properties) in both of the folders.
