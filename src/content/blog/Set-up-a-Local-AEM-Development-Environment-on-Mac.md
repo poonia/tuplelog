@@ -140,11 +140,11 @@ aem/
 ```treeview
 aem/
 |-- author/
-|	|-- aem-author-p4502.jar
-|	|-- license.properties
+  |-- aem-author-p4502.jar
+  |-- license.properties
 |-- publish/
-|	|--	aem-publish-p4503.jar
-|	|-- license.properties
+  |--	aem-publish-p4503.jar
+  |-- license.properties
 ```
 
 * Now, to install the **Author** instance, double-click on the `aem-author-p4502.jar` file. This will start the author instance, which runs on port **4502** on the local computer. Similarly, we can install and start the publish instance.
