@@ -143,7 +143,7 @@ aem/
 |    |-- aem-author-p4502.jar
 |    |-- license.properties
 |-- publish/
-|    |--	aem-publish-p4503.jar
+|    |-- aem-publish-p4503.jar
 |    |-- license.properties
 ```
 
