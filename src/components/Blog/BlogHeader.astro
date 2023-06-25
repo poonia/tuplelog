@@ -1,7 +1,7 @@
 ---
 import FormattedDate from '../FormattedDate.astro';
 
-const { title, description, pubDate,remarkPluginFrontmatter,tags } = Astro.props;
+const { title, description, pubDate,timeToRead,tags } = Astro.props;
 
 ---
 <div class="post-head is-horizontal-align banner merge-header-banner">
@@ -18,7 +18,7 @@ const { title, description, pubDate,remarkPluginFrontmatter,tags } = Astro.props
         ))}
         </ul>
         <div class="date-n-read">
-            <FormattedDate date={pubDate} /> <span class="delimtr">  ◆ </span>  <span>☕️ {Math.round(remarkPluginFrontmatter?.estReadingTime) || "5"} min read</span>
+            <FormattedDate date={pubDate} /> <span class="delimtr">  ◆ </span>  <span>☕️ {timeToRead} min read</span>
         </div>
     </div>
 </div>
