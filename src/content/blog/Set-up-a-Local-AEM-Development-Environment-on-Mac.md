@@ -55,7 +55,9 @@ Once you have made these changes, you can relaunch the Terminal to apply the upd
 
 To ensure JDK and `JAVA_HOME` is setup correctly you can verify using the below commands -
 
+
 * For JDK, run `java -version` command. If installed properly you might see the following output -
+
 
 ```powershell
 $ java -version
@@ -116,7 +118,7 @@ OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
 
 ##### [AEM](#AEM)
 
-Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have an AEM jar locally then you can download it from  [Adobe Licensing Website](https://licensing.adobe.com/ "download AEM here"), only valid users have access to this page.
+Once Java and Maven are set up correctly, now is a good time to install AEM locally. If you don't have an AEM jar locally then you can download it from  [Adobe Licensing Website](https://licensing.adobe.com/ "download AEM here"), only valid users have access to this page.
 
 Now once you have .jar and the license downloaded, follow the below steps to install AEM -
 

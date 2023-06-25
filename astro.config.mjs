@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import oneDarkPro from './src/utils/shiki-theme/one-dark-pro.json';
 
 import remarkToc from 'remark-toc';
+import remarkPrism from 'remark-prism';
 import { remarkReadingTime } from "./src/utils/readingTime";
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
@@ -29,7 +30,7 @@ export default defineConfig({
       //     wrap: true,
       // },
       extendDefaultPlugins: true,
-      remarkPlugins: [remarkReadingTime,remarkToc,a11yEmoji],
+      remarkPlugins: [remarkReadingTime,remarkToc,a11yEmoji,remarkPrism],
       rehypePlugins: [
         rehypeHeadingIds
       ],
