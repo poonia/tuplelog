@@ -2,14 +2,13 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE } from '../consts';
 import SvgIcon from './SvgIcon.astro'
+import Logo from './Logo.astro';
 ---
 
 <header class="header max-w-full ">
 	 <!-- 🫧🕸️ 🏔️ ⛩️ 🧿 🌀 ⌘ 🀤 -->
 	<div class="container-sm-w header-container">
-		<a href="/" class="brand">
-			🌀 { SITE.nameToken.initial }<span class="highlight">{ SITE.nameToken.last }</span>
-		</a>
+		<Logo />
 		<nav class="navigation">
 			<ul class="list-none flex">
 				<li class="nav-item">
@@ -48,31 +47,11 @@ import SvgIcon from './SvgIcon.astro'
 		justify-content: space-between;
 		align-items: center;
 	}
-	.brand {
-		font-size: 1.8rem;
-		font-weight: 800;
-		line-height: 2.2rem;
-		letter-spacing: .2px;
-		-webkit-font-smoothing: antialiased;
-		text-transform: uppercase;
-		font-family: var(--font-family-sans);
-		color: var(--color-primary);
-	}
-	.brand:hover {
-		text-decoration: none !important;
-	}
-	.brand span {
-		font-weight: 900;
-		padding: 0 3px;
-		letter-spacing: .8px;
-	}
 	.nav-item {
 		padding: 0 1rem;
 	}
 	.nav-link {
 		font-family: var(--font-family-serif-primary);
 	}
-
-
 </style>
 

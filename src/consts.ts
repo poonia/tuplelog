@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Tuple Log';
+export const SITE_TITLE = 'Kith.dev';
 export const SITE_DESCRIPTION = 'Tuplelog contains a collection of writings, insights, notes and learning experiences for frontend development';
 
 export const NAV_ITEMS: NavItems = {
@@ -29,14 +29,14 @@ export const NAV_ITEMS: NavItems = {
 
 export const SITE = {
     // Your site's detail?
-    name: 'TupleLog',
+    name: 'KithDev',
     nameToken:{
-        initial: 'Tuple',
-        last:'Log'
+        initial: 'Kith',
+        last:'.dev'
     },
-    title: 'TupleLog',
-    description: 'Tuplelog contains a collection of writings, insights, notes and learning experiences for frontend development',
-    url: 'https://tuplelog.com',
+    title: 'KithDev',
+    description: 'KithDev contains a collection of writings, insights, notes and learning experiences for frontend development',
+    url: 'https://kith.dev',
     githubUrl: 'https://github.com/poonia',
     listDrafts: true,
     image: 'https://github.com/poonia/tuplelog/blob/main/public/placeholder-about.jpg',
