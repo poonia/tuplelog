@@ -55,7 +55,9 @@ Once you have made these changes, you can relaunch the Terminal to apply the upd
 
 To ensure JDK and `JAVA_HOME` is setup correctly you can verify using the below commands -
 
-* For JDK, run `java -version` command. If installed properly you might see the following output -
+
+* For JDK, run `java -version` command. If installed properly you might see the following output -
+
 
 ```powershell
 $ java -version
@@ -101,7 +103,7 @@ Once you have made these changes, you can relaunch the Terminal to apply the upd
 
 To ensure `mvn` and `M2_HOME` is setup correctly you can verify using the below commands -
 
-Run the `mvn -version` command in the terminal, If installed properly you might see the following output -
+Run the `mvn -version` command in the terminal, If installed properly you might see the following output -
 
 ```powershell
 $ mvn -version
