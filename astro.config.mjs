@@ -13,7 +13,7 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tuplelog.com',
+  site: 'https://kith.dev',
   integrations: [
       mdx(),
       sitemap(),
