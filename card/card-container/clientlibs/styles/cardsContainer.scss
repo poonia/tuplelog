@@ -1,0 +1,24 @@
+/* cardsContainer.less */
+
+
+// mobile - <600
+// [use this for all default styles]
+@import './cardsContainer/cardsContainerNarrow.less';
+
+// tablet - 600
+// [use this ONLY if its required]
+@media only screen and (min-width: @breakpointTablet) {
+    @import './cardsContainer/cardsContainerTablet.less';
+}
+
+// desktop - 900
+// [use this for general desktop styles]
+@media only screen and (min-width: @breakpointWide) {
+    @import './cardsContainer/cardsContainerWide.less';
+}
+
+// wide screens - >1200
+// [use this ONLY if its required]
+@media only screen and (min-width: @breakpointSuperWide) {
+    @import './cardsContainer/cardsContainerSuperWide.less';
+}

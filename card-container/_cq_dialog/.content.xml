@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Cards Container Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav" />
+        <items jcr:primaryType="nt:unstructured">
+            <tab1 jcr:primaryType="nt:unstructured"
+                jcr:title="Configuration"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
+                <items jcr:primaryType="nt:unstructured">
+                    <columns jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <cardType jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                defaultValue="article"
+                                fieldDescription="Select the type of content card to display."
+                                fieldLabel="Select Content Card Type"
+                                name="./cardType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <article jcr:primaryType="nt:unstructured"
+                                        text="Article"
+                                        value="article" />
+                                    <article_boutique jcr:primaryType="nt:unstructured"
+                                        text="Boutique Article"
+                                        value="article_boutique" />
+                                    <boutique jcr:primaryType="nt:unstructured"
+                                        text="Boutique"
+                                        value="boutique" />
+                                    <collection jcr:primaryType="nt:unstructured"
+                                        text="Collection"
+                                        value="collection" />
+                                    <decade jcr:primaryType="nt:unstructured"
+                                        text="Decade"
+                                        value="decade" />
+                                    <dossier jcr:primaryType="nt:unstructured"
+                                        text="Dossier"
+                                        value="dossier" />
+                                    <histoires jcr:primaryType="nt:unstructured"
+                                        text="Histoires"
+                                        value="histoires" />
+                                    <news jcr:primaryType="nt:unstructured"
+                                        text="News"
+                                        value="news" />
+                                    <news_boutique jcr:primaryType="nt:unstructured"
+                                        text="Boutique News"
+                                        value="news_boutique" />
+                                    <product jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product" />
+                                    <video jcr:primaryType="nt:unstructured"
+                                        text="Video"
+                                        value="video" />
+                                    <exhibition jcr:primaryType="nt:unstructured"
+                                        text="Exhibition"
+                                        value="exhibition" />
+                                </items>
+                            </cardType>
+                            <cardsCount jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                defaultValue="2"
+                                fieldDescription="Select the number of content card to display."
+                                fieldLabel="Select the number of content card to display"
+                                min="0"
+                                max="12"
+                                name="./cardsCount"
+                                step="1" />
+                            <label jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Manually add the detail pages for which the cards are to be displayed">
+                                <field jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    eaem-nested="NODE_STORE"
+                                    name="./field">
+                                    <layout jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute" />
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <resourcePath jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Select the page path for which card has to be displayed."
+                                                    fieldLabel="Page path"
+                                                    rootPath="/content/vca"
+                                                    name="./resourcePath" />
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </label>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>
+
